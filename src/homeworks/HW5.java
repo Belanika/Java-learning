@@ -16,8 +16,35 @@ amount of jam specified by Jane. Amount of jam should be read from user
 (positive int value). You can assume that there's always enough jam in Alex's shop.
 Your application should print true or false.*/
 
+import java.util.Scanner;
+
 public class HW5 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How much jam does Jane need?");
+        int jam = scanner.nextInt();
+        int x = 0;
+        int y = 0;
+
+        while((7 * x < jam) && x < 6){
+            x++;
+        }
+        if (jam % 7 * x != 0){
+           while(y < 6 && y < (jam % 7 * x)){
+               y++;
+           }
+        }
+
+        if(jam > 0 && (x != 0 || y != 0)){
+           if(x + y <= 6){
+               System.out.println("true");
+           }
+           else
+               System.out.println("false");
+        }
+
+        //Option 2
+        System.out.println(jam / 7 + jam % 7 < 6);
 
     }
 }
