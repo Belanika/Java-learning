@@ -18,9 +18,18 @@ public class CallingCarClass {
         //Car printCarInfo method to get info about the car
 
         Car car1 = new Car();
-        car1.brand = brand;
-        car1.color = color;
-        car1.maxSpeed = maxSpeed;
+        car1.setColor(color);
+        car1.setBrand(brand);
+        car1.setMaxSpeed(maxSpeed);
         car1.printCarInfo();
+
+        //Get max speed
+        System.out.println("max speed " + car1.getMaxSpeed());
+
+        if (car1.getMaxSpeed() >= 300){
+            System.out.println("Sport car");
+        }else {
+            System.out.println("Regular car");
+        }
     }
 }
