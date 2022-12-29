@@ -33,4 +33,14 @@ public class Triangle {
 //        }
         return s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1;
     }
+
+    public double areaTriangle (){
+        if (isValid(side1, side2, side3)){
+            double p = (side1 + side2 + side3) / 2;
+            return Math.sqrt(p * (p -side1) * (p - side2) * (p - side3));
+        } else {
+            System.out.println("Triangle is not valid");
+            return 0;
+        }
+    }
 }
